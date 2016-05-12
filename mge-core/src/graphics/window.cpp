@@ -98,5 +98,5 @@ namespace mge
 			win->m_mouseX = xpos;
 			win->m_mouseY = ypos;
 		}
-	}
-}
+	} // namespace graphics
+} // namespace mge

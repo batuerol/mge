@@ -75,5 +75,5 @@ namespace mge
 			static void callback_mousebutton(GLFWwindow* window, int button, int action, int mods);
 			static void callback_cursorposition(GLFWwindow* window, double xpos, double ypos);
 		};
-	}
-}
+	} // namespace graphics
+} // namespace mge
