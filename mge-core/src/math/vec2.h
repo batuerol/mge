@@ -20,10 +20,10 @@ namespace mge
 			vec2();
 			vec2(const float& x = 0, const float& y = 0);
 
-			vec2& add(const vec2& rhs);
-			vec2& sub(const vec2& rhs);
-			vec2& multiply(const vec2& rhs);
-			vec2& divide(const vec2& rhs);
+			vec2& Add(const vec2& rhs);
+			vec2& Sub(const vec2& rhs);
+			vec2& Multiply(const vec2& rhs);
+			vec2& Divide(const vec2& rhs);
 
 			vec2& operator+=(const vec2& rhs);
 			vec2& operator-=(const vec2& rhs);

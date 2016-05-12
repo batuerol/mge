@@ -24,10 +24,10 @@ namespace mge
 			vec4();
 			vec4(const float& x = 0, const float& y = 0, const float& z = 0, const float& w = 0);
 
-			vec4& add(const vec4& rhs);
-			vec4& sub(const vec4& rhs);
-			vec4& multiply(const vec4& rhs);
-			vec4& divide(const vec4& rhs);
+			vec4& Add(const vec4& rhs);
+			vec4& Sub(const vec4& rhs);
+			vec4& Multiply(const vec4& rhs);
+			vec4& Divide(const vec4& rhs);
 
 			vec4& operator+=(const vec4& rhs);
 			vec4& operator-=(const vec4& rhs);

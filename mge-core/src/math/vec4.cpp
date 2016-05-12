@@ -20,7 +20,7 @@ namespace mge
 			this->w = w;
 		}
 
-		vec4& vec4::add(const vec4 & rhs)
+		vec4& vec4::Add(const vec4 & rhs)
 		{
 			x += rhs.x;
 			y += rhs.y;
@@ -29,7 +29,7 @@ namespace mge
 			return *this;
 		}
 
-		vec4& vec4::sub(const vec4& rhs)
+		vec4& vec4::Sub(const vec4& rhs)
 		{
 			x -= rhs.x;
 			y -= rhs.y;
@@ -38,7 +38,7 @@ namespace mge
 			return *this;
 		}
 
-		vec4 & vec4::multiply(const vec4 & rhs)
+		vec4 & vec4::Multiply(const vec4 & rhs)
 		{
 			x *= rhs.x;
 			y *= rhs.y;
@@ -47,7 +47,7 @@ namespace mge
 			return *this;
 		}
 
-		vec4 & vec4::divide(const vec4 & rhs)
+		vec4 & vec4::Divide(const vec4 & rhs)
 		{
 			x /= rhs.x;
 			y /= rhs.y;
@@ -58,22 +58,22 @@ namespace mge
 
 		vec4 & vec4::operator+=(const vec4 & rhs)
 		{
-			return add(rhs);
+			return Add(rhs);
 		}
 
 		vec4 & vec4::operator-=(const vec4 & rhs)
 		{
-			return sub(rhs);
+			return Sub(rhs);
 		}
 
 		vec4 & vec4::operator*=(const vec4 & rhs)
 		{
-			return multiply(rhs);
+			return Multiply(rhs);
 		}
 
 		vec4 & vec4::operator/=(const vec4 & rhs)
 		{
-			return divide(rhs);
+			return Divide(rhs);
 		}
 
 		bool vec4::operator==(const vec4 & rhs)
@@ -88,22 +88,22 @@ namespace mge
 
 		vec4 & operator+(vec4 lhs, const vec4 & rhs)
 		{
-			return lhs.add(rhs);
+			return lhs.Add(rhs);
 		}
 
 		vec4 & operator-(vec4 lhs, const vec4 & rhs)
 		{
-			return lhs.sub(rhs);
+			return lhs.Sub(rhs);
 		}
 
 		vec4 & operator*(vec4 lhs, const vec4 & rhs)
 		{
-			return lhs.multiply(rhs);
+			return lhs.Multiply(rhs);
 		}
 
 		vec4 & operator/(vec4 lhs, const vec4 & rhs)
 		{
-			return lhs.divide(rhs);
+			return lhs.Divide(rhs);
 		}
 
 		std::ostream & operator<<(std::ostream & stream, const vec4 & rhs)

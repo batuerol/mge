@@ -23,10 +23,10 @@ namespace mge
 			vec3();
 			vec3(const float& x = 0, const float& y = 0, const float& z = 0);
 
-			vec3& add(const vec3& rhs);
-			vec3& sub(const vec3& rhs);
-			vec3& multiply(const vec3& rhs);
-			vec3& divide(const vec3& rhs);
+			vec3& Add(const vec3& rhs);
+			vec3& Sub(const vec3& rhs);
+			vec3& Multiply(const vec3& rhs);
+			vec3& Divide(const vec3& rhs);
 
 			vec3& operator+=(const vec3& rhs);
 			vec3& operator-=(const vec3& rhs);
