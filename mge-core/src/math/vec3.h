@@ -9,8 +9,14 @@ namespace mge
 		struct vec3
 		{
 			union {
-				float x, y, z;
-				float r, g, b;
+				struct
+				{
+					float x, y, z;
+				};
+				struct
+				{
+					float r, g, b;
+				};
 				float values[3];
 			};
 
@@ -30,10 +36,10 @@ namespace mge
 			bool operator==(const vec3& rhs);
 			bool operator!=(const vec3& rhs);
 
-			friend vec3& operator+(vec3 &lhs, const vec3& rhs);
-			friend vec3& operator-(vec3 &lhs, const vec3& rhs);
-			friend vec3& operator*(vec3 &lhs, const vec3& rhs);
-			friend vec3& operator/(vec3 &lhs, const vec3& rhs);
+			friend vec3& operator+(vec3 lhs, const vec3& rhs);
+			friend vec3& operator-(vec3 lhs, const vec3& rhs);
+			friend vec3& operator*(vec3 lhs, const vec3& rhs);
+			friend vec3& operator/(vec3 lhs, const vec3& rhs);
 
 			friend std::ostream& operator<<(std::ostream& stream, const vec3& rhs);
 		};

@@ -8,9 +8,12 @@ namespace mge
 	{
 		struct vec2
 		{
-			union 
+			union
 			{
-				float x, y;				
+				struct
+				{
+					float x, y;
+				};
 				float values[2];
 			};
 
@@ -30,10 +33,10 @@ namespace mge
 			bool operator==(const vec2& rhs);
 			bool operator!=(const vec2& rhs);
 
-			friend vec2& operator+(vec2 &lhs, const vec2& rhs);
-			friend vec2& operator-(vec2 &lhs, const vec2& rhs);
-			friend vec2& operator*(vec2 &lhs, const vec2& rhs);
-			friend vec2& operator/(vec2 &lhs, const vec2& rhs);
+			friend vec2& operator+(vec2 lhs, const vec2& rhs);
+			friend vec2& operator-(vec2 lhs, const vec2& rhs);
+			friend vec2& operator*(vec2 lhs, const vec2& rhs);
+			friend vec2& operator/(vec2 lhs, const vec2& rhs);
 
 			friend std::ostream& operator<<(std::ostream& stream, const vec2& rhs);
 		};

@@ -84,22 +84,22 @@ namespace mge
 			return !(*this == rhs);
 		}
 
-		vec4 & operator+(vec4 & lhs, const vec4 & rhs)
+		vec4 & operator+(vec4 lhs, const vec4 & rhs)
 		{
 			return lhs.add(rhs);
 		}
 
-		vec4 & operator-(vec4 & lhs, const vec4 & rhs)
+		vec4 & operator-(vec4 lhs, const vec4 & rhs)
 		{
 			return lhs.sub(rhs);
 		}
 
-		vec4 & operator*(vec4 & lhs, const vec4 & rhs)
+		vec4 & operator*(vec4 lhs, const vec4 & rhs)
 		{
 			return lhs.multiply(rhs);
 		}
 
-		vec4 & operator/(vec4 & lhs, const vec4 & rhs)
+		vec4 & operator/(vec4 lhs, const vec4 & rhs)
 		{
 			return lhs.divide(rhs);
 		}

@@ -10,8 +10,14 @@ namespace mge
 		{
 			union
 			{
-				float x, y, z, w;
-				float r, g, b, a;
+				struct
+				{
+					float x, y, z, w;
+				};
+				struct
+				{
+					float r, g, b, a;
+				};
 				float values[4];
 			};
 
@@ -31,10 +37,10 @@ namespace mge
 			bool operator==(const vec4& rhs);
 			bool operator!=(const vec4& rhs);
 
-			friend vec4& operator+(vec4 &lhs, const vec4& rhs);
-			friend vec4& operator-(vec4 &lhs, const vec4& rhs);
-			friend vec4& operator*(vec4 &lhs, const vec4& rhs);
-			friend vec4& operator/(vec4 &lhs, const vec4& rhs);
+			friend vec4& operator+(vec4 lhs, const vec4& rhs);
+			friend vec4& operator-(vec4 lhs, const vec4& rhs);
+			friend vec4& operator*(vec4 lhs, const vec4& rhs);
+			friend vec4& operator/(vec4 lhs, const vec4& rhs);
 
 			friend std::ostream& operator<<(std::ostream& stream, const vec4& rhs);
 		};
