@@ -13,13 +13,18 @@ int main()
 	while (!window.Closed())
 	{		
 		window.Clear(0.2f, 0.3f, 0.8f, 1.0f);
+		
+		if (window.IsMouseButtonPressed(GLFW_MOUSE_BUTTON_1))
+		{
+			std::cout << "A Key is pressed." << std::endl;
+		}
 
-		/*glBegin(GL_QUADS);
+		glBegin(GL_QUADS);
 		glVertex2f(-0.5f, -0.5f);
 		glVertex2f(-0.5f, +0.5f);
 		glVertex2f(+0.5f, +0.5f);
 		glVertex2f(+0.5f, -0.5f);
-		glEnd();*/
+		glEnd();
 
 		glDrawArrays(GL_ARRAY_BUFFER, 0, 6);
 

@@ -23,9 +23,9 @@ namespace mge
 			bool m_Closed;
 			GLFWwindow *m_pWindow;
 
-			static bool s_Keys[MAX_KEYS];
-			static bool s_MouseButtons[MAX_BUTTONS];
-			static double s_mouseX, s_mouseY;
+			bool m_Keys[MAX_KEYS];
+			bool m_MouseButtons[MAX_BUTTONS];
+			double m_mouseX, m_mouseY;
 
 		public:
 			Window(const char* title, int width, int height);
@@ -46,10 +46,34 @@ namespace mge
 				return m_Height;
 			}
 
+			inline bool IsKeyPressed(int keycode) const
+			{
+				if (keycode < 0 || keycode >= MAX_KEYS)
+					return false;
+
+				return m_Keys[keycode];
+			}
+
+			inline bool IsMouseButtonPressed(int button) const
+			{
+				if (button < 0 || button >= MAX_BUTTONS)
+					return false;
+
+				return m_MouseButtons[button];
+			}
+
+			inline void GetMousePosition(double& x, double &y)
+			{
+				x = m_mouseX;
+				y = m_mouseY;
+			}
+
 		private:
 			static void callback_windowResize(GLFWwindow* window, int width, int height);
 			static void callback_windowClose(GLFWwindow* window);
 			static void callback_key(GLFWwindow* window, int key, int scancode, int action, int mods);
+			static void callback_mousebutton(GLFWwindow* window, int button, int action, int mods);
+			static void callback_cursorposition(GLFWwindow* window, double xpos, double ypos);
 		};
 	}
 }

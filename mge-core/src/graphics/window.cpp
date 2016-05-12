@@ -37,6 +37,8 @@ namespace mge
 			glfwSetWindowUserPointer(m_pWindow, this);
 			//glfwSetWindowCloseCallback(m_window, callback_windowClose);			
 			glfwSetWindowSizeCallback(m_pWindow, callback_windowResize);
+			glfwSetKeyCallback(m_pWindow, callback_key);
+			glfwSetMouseButtonCallback(m_pWindow, callback_mousebutton);
 
 			if (glewInit() != GLEW_OK)
 			{
@@ -81,7 +83,20 @@ namespace mge
 		void Window::callback_key(GLFWwindow* window, int key, int scancode, int action, int mods)
 		{
 			Window *win = (Window *)glfwGetWindowUserPointer(window);			
-			s_Keys[key] = action != GLFW_RELEASE;
+			win->m_Keys[key] = action != GLFW_RELEASE;
+		}
+
+		void Window::callback_mousebutton(GLFWwindow * window, int button, int action, int mods)
+		{
+			Window *win = (Window *)glfwGetWindowUserPointer(window);
+			win->m_MouseButtons[button] = action != GLFW_RELEASE;
+		}
+
+		void Window::callback_cursorposition(GLFWwindow * window, double xpos, double ypos)
+		{
+			Window* win = (Window*)glfwGetWindowUserPointer(window);
+			win->m_mouseX = xpos;
+			win->m_mouseY = ypos;
 		}
 	}
 }
