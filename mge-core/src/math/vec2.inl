@@ -149,7 +149,7 @@ namespace mge
 
 		static vec2 operator-(float scalar, const vec2 & v)
 		{
-			return (v - scalar);
+			return vec2(scalar - v.x, scalar - v.y);
 		}
 
 		static vec2 operator-(const vec2 & lhs, const vec2 & rhs)
@@ -179,7 +179,7 @@ namespace mge
 
 		static vec2 operator/(float scalar, const vec2 & v)
 		{
-			return (v / scalar);
+			return vec2(scalar / v.x, scalar / v.y);
 		}
 
 		static vec2 operator/(const vec2 & lhs, const vec2 & rhs)

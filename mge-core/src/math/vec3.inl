@@ -160,7 +160,7 @@ namespace mge
 
 		static vec3 operator-(float scalar, const vec3 & v)
 		{
-			return (v - scalar);
+			return vec3(scalar - v.x, scalar - v.y, scalar - v.z);
 		}
 
 		static vec3 operator-(const vec3 & lhs, const vec3 & rhs)
@@ -190,7 +190,7 @@ namespace mge
 
 		static vec3 operator/(float scalar, const vec3 & v)
 		{
-			return (v / scalar);
+			return vec3(scalar / v.x, scalar / v.y, scalar / v.z);;
 		}
 
 		static vec3 operator/(const vec3 & lhs, const vec3 & rhs)

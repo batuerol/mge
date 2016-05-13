@@ -171,7 +171,7 @@ namespace mge
 
 		static vec4 operator-(float scalar, const vec4 & v)
 		{
-			return (v - scalar);
+			return vec4(scalar - v.x, scalar - v.y, scalar - v.z, scalar - v.w);
 		}
 
 		static vec4 operator-(const vec4 & lhs, const vec4 & rhs)
@@ -201,7 +201,7 @@ namespace mge
 
 		static vec4 operator/(float scalar, const vec4 & v)
 		{
-			return (v / scalar);
+			return vec4(scalar / v.x, scalar / v.y, scalar / v.z, scalar / v.w);
 		}
 
 		static vec4 operator/(const vec4 & lhs, const vec4 & rhs)
