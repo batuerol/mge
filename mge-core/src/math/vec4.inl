@@ -3,6 +3,11 @@ namespace mge
 {
 	namespace math
 	{
+		inline vec4::vec4() :
+			x(0.0f), y(0.0f), z(0.0f), w(0.0f)
+		{			
+		}
+
 		inline vec4::vec4(float scalar) :
 			x(scalar), y(scalar), z(scalar), w(scalar)
 		{

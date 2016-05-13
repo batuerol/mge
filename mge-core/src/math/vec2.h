@@ -18,9 +18,9 @@ namespace mge
 			};
 
 			/// --- CONSTRUCTOR/DESTRUCTOR ---			
-			vec2() = default;
 			vec2(const vec2& v) = default;
 
+			vec2();
 			explicit vec2(float scalar);
 			explicit vec2(const float& x, const float& y);
 
