@@ -35,6 +35,9 @@ namespace mge
 			vec3& Divide(float k);
 
 			/// --- OPERATORS --- 
+			float& operator[](unsigned int i);
+			float& const operator[](unsigned int i) const;
+
 			vec3 operator+(const vec3& v);
 			vec3 operator-(const vec3& v);
 
@@ -51,7 +54,7 @@ namespace mge
 			bool operator==(const vec3& rhs);
 			bool operator!=(const vec3& rhs);
 
-			/// --- FRIEND METHODS/OPERATORS ---
+			/// --- FRIEND FUNCTIONS/OPERATORS ---
 			friend vec3& operator+(vec3 lhs, const vec3& rhs);
 			friend vec3& operator-(vec3 lhs, const vec3& rhs);
 			friend vec3& operator*(vec3 lhs, const vec3& rhs);

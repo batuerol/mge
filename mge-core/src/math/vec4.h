@@ -36,6 +36,9 @@ namespace mge
 			vec4& Divide(float k);
 
 			/// --- OPERATORS ---
+			float& operator[](unsigned int i);
+			float& const operator[](unsigned int i) const;
+
 			vec4 operator+(const vec4& v);
 			vec4 operator-(const vec4& v);
 

@@ -70,6 +70,19 @@ namespace mge
 			return Multiply(1.0f / k);
 		}
 
+		float & vec3::operator[](unsigned int i)
+		{
+			// TODO(batuhan): Implement ArrayCount.
+			// TODO(batuhan): Assert. Check i > 0 && i < length
+			return (float&)(values[i]);
+		}
+
+		float & const vec3::operator[](unsigned int i) const
+		{
+			// TODO(batuhan): Assert. Check i > 0 && i < length
+			return (float&)(values[i]);
+		}
+
 		vec3 vec3::operator+(const vec3 & v)
 		{
 			return v;

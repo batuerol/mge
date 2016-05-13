@@ -77,6 +77,19 @@ namespace mge
 			return Multiply(1.0f / k);
 		}
 
+		float & vec4::operator[](unsigned int i)
+		{
+			// TODO(batuhan): Implement ArrayCount.
+			// TODO(batuhan): Assert. Check i > 0 && i < length
+			return (float&)(values[i]);
+		}
+
+		float & const vec4::operator[](unsigned int i) const
+		{
+			// TODO(batuhan): Assert. Check i > 0 && i < length
+			return (float&)(values[i]);
+		}
+
 		vec4 vec4::operator+(const vec4 & v)
 		{
 			return v;

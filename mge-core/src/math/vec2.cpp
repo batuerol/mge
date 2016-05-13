@@ -63,6 +63,19 @@ namespace mge
 			return Multiply(1.0f / k);
 		}
 
+		float & vec2::operator[](unsigned int i)
+		{
+			// TODO(batuhan): Implement ArrayCount.
+			// TODO(batuhan): Assert. Check i > 0 && i < length
+			return (float&)(values[i]);
+		}
+
+		float & const vec2::operator[](unsigned int i) const
+		{
+			// TODO(batuhan): Assert. Check i > 0 && i < length
+			return (float&)(values[i]);
+		}
+
 		vec2 & vec2::operator+=(const vec2 & rhs)
 		{
 			return Add(rhs);
@@ -119,7 +132,7 @@ namespace mge
 		}
 
 		vec2 vec2::operator-(const vec2 & v)
-		{			
+		{
 			return vec2(-v.x, -v.y);
 		}
 
