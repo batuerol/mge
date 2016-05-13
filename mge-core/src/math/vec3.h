@@ -21,7 +21,6 @@ namespace mge
 			};
 
 			/// --- CONSTRUCTOR/DESTRUCTOR ---
-			vec3();
 			vec3(const float& x = 0, const float& y = 0, const float& z = 0);
 
 			/// --- MEMBER FUNCTIONS ---
@@ -30,11 +29,24 @@ namespace mge
 			vec3& Multiply(const vec3& rhs);
 			vec3& Divide(const vec3& rhs);
 
+			vec3& Add(float k);
+			vec3& Sub(float k);
+			vec3& Multiply(float k);
+			vec3& Divide(float k);
+
 			/// --- OPERATORS --- 
+			vec3 operator+(const vec3& v);
+			vec3 operator-(const vec3& v);
+
 			vec3& operator+=(const vec3& rhs);
 			vec3& operator-=(const vec3& rhs);
 			vec3& operator*=(const vec3& rhs);
 			vec3& operator/=(const vec3& rhs);
+
+			vec3& operator+=(float k);
+			vec3& operator-=(float k);
+			vec3& operator*=(float k);
+			vec3& operator/=(float k);
 
 			bool operator==(const vec3& rhs);
 			bool operator!=(const vec3& rhs);
@@ -44,6 +56,11 @@ namespace mge
 			friend vec3& operator-(vec3 lhs, const vec3& rhs);
 			friend vec3& operator*(vec3 lhs, const vec3& rhs);
 			friend vec3& operator/(vec3 lhs, const vec3& rhs);
+
+			friend vec3& operator+(vec3 lhs, float k);
+			friend vec3& operator-(vec3 lhs, float k);
+			friend vec3& operator*(vec3 lhs, float k);
+			friend vec3& operator/(vec3 lhs, float k);
 
 			friend std::ostream& operator<<(std::ostream& stream, const vec3& rhs);
 		};

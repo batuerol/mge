@@ -3,15 +3,7 @@
 namespace mge
 {
 	namespace math
-	{
-		vec4::vec4()
-		{
-			x = 0.0f;
-			y = 0.0f;
-			z = 0.0f;
-			w = 0.0f;
-		}
-
+	{		
 		vec4::vec4(const float & x, const float & y, const float & z, const float & w)
 		{
 			this->x = x;
@@ -56,6 +48,45 @@ namespace mge
 			return *this;
 		}
 
+		vec4 & vec4::Add(float k)
+		{
+			x += k;
+			y -= k;
+			z -= k;
+			w -= k;
+			return *this;
+		}
+
+		vec4 & vec4::Sub(float k)
+		{
+			return Add(-k);
+		}
+
+		vec4 & vec4::Multiply(float k)
+		{
+			x *= k;
+			y *= k;
+			z *= k;
+			w *= k;
+			return *this;
+		}
+
+		vec4 & vec4::Divide(float k)
+		{
+			// TODO(batuhan): Handle divide by 0?
+			return Multiply(1.0f / k);
+		}
+
+		vec4 vec4::operator+(const vec4 & v)
+		{
+			return v;
+		}
+
+		vec4 vec4::operator-(const vec4 & v)
+		{
+			return vec4(-v.x, -v.y, -v.z, -v.w);
+		}
+
 		vec4 & vec4::operator+=(const vec4 & rhs)
 		{
 			return Add(rhs);
@@ -74,6 +105,26 @@ namespace mge
 		vec4 & vec4::operator/=(const vec4 & rhs)
 		{
 			return Divide(rhs);
+		}
+
+		vec4 & vec4::operator+=(float k)
+		{
+			return Add(k);
+		}
+
+		vec4 & vec4::operator-=(float k)
+		{
+			return Sub(k);
+		}
+
+		vec4 & vec4::operator*=(float k)
+		{
+			return Multiply(k);
+		}
+
+		vec4 & vec4::operator/=(float k)
+		{
+			return Divide(k);
 		}
 
 		bool vec4::operator==(const vec4 & rhs)
@@ -104,6 +155,26 @@ namespace mge
 		vec4 & operator/(vec4 lhs, const vec4 & rhs)
 		{
 			return lhs.Divide(rhs);
+		}
+
+		vec4 & operator+(vec4 lhs, float k)
+		{
+			return lhs.Add(k);
+		}
+
+		vec4 & operator-(vec4 lhs, float k)
+		{
+			return lhs.Sub(k);
+		}
+
+		vec4 & operator*(vec4 lhs, float k)
+		{
+			return lhs.Multiply(k);
+		}
+
+		vec4 & operator/(vec4 lhs, float k)
+		{
+			return lhs.Divide(k);
 		}
 
 		std::ostream & operator<<(std::ostream & stream, const vec4 & rhs)
