@@ -25,6 +25,16 @@ namespace mge
 			explicit vec2(const float& x, const float& y);
 
 			/// --- MEMBER FUNCTIONS ---
+			void Normalize();
+			vec2 Normalized();
+			float Magnitude();
+			float SqrMagnitude();
+
+			/// --- STATIC FUNCTIONS ---
+			static vec2 Normalize(const vec2& v);
+			static float Magnitude(const vec2& v);
+			static float SqrMagnitude(const vec2& v);
+			static float Dot(const vec2& lhs, const vec2& rhs);
 
 			/// --- OPERATORS ---
 			vec2& operator=(const vec2& v);

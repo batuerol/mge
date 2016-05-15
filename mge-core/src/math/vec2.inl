@@ -18,6 +18,49 @@ namespace mge
 		{
 		}
 
+		inline void vec2::Normalize()
+		{
+			vec2 normalized = vec2::Normalize(*this);
+			this->x = normalized.x;
+			this->y = normalized.y;
+		}
+
+		inline vec2 vec2::Normalized()
+		{
+			return vec2::Normalize(*this);
+		}
+
+		inline float vec2::Magnitude()
+		{
+			return vec2::Magnitude(*this);
+		}
+
+		inline float vec2::SqrMagnitude()
+		{
+			return vec2::SqrMagnitude(*this);
+		}
+
+		inline vec2 vec2::Normalize(const vec2 & v)
+		{
+			return v / vec2::Magnitude(v);
+		}
+
+		inline float vec2::Magnitude(const vec2 & v)
+		{
+			return std::sqrtf(vec2::Dot(v, v));
+		}
+
+		inline float vec2::SqrMagnitude(const vec2 & v)
+		{
+			return vec2::Dot(v, v);
+		}
+
+		inline float vec2::Dot(const vec2 & lhs, const vec2 & rhs)
+		{
+			vec2 temp(lhs * rhs);
+			return temp.x + temp.y;
+		}
+
 		inline vec2 & vec2::operator=(const vec2 & v)
 		{
 			this->x = v.x;

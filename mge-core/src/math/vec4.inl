@@ -5,7 +5,7 @@ namespace mge
 	{
 		inline vec4::vec4() :
 			x(0.0f), y(0.0f), z(0.0f), w(0.0f)
-		{			
+		{
 		}
 
 		inline vec4::vec4(float scalar) :
@@ -16,6 +16,51 @@ namespace mge
 		inline vec4::vec4(const float & x, const float & y, const float & z, const float & w) :
 			x(x), y(y), z(z), w(w)
 		{
+		}
+
+		inline void vec4::Normalize()
+		{
+			vec4 normalized = vec4::Normalize(*this);
+			this->x = normalized.x;
+			this->y = normalized.y;
+			this->z = normalized.z;
+			this->w = normalized.w;
+		}
+
+		inline vec4 vec4::Normalized()
+		{
+			return vec4::Normalize(*this);
+		}
+
+		inline float vec4::Magnitude()
+		{
+			return vec4::Magnitude(*this);
+		}
+
+		inline float vec4::SqrMagnitude()
+		{
+			return vec4::SqrMagnitude(*this);
+		}
+
+		inline vec4 vec4::Normalize(const vec4 & v)
+		{
+			return v / vec4::Magnitude(v);
+		}
+
+		inline float vec4::Magnitude(const vec4 & v)
+		{
+			return std::sqrtf(vec4::Dot(v, v));
+		}
+
+		inline float vec4::SqrMagnitude(const vec4 & v)
+		{
+			return vec4::Dot(v, v);
+		}
+
+		inline float vec4::Dot(const vec4 & lhs, const vec4 & rhs)
+		{
+			vec4 temp(lhs * rhs);
+			return temp.x + temp.y + temp.z + temp.w;
 		}
 
 		inline vec4 & vec4::operator=(const vec4 & v)

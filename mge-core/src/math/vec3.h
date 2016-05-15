@@ -28,6 +28,17 @@ namespace mge
 			explicit vec3(const float& x, const float& y, const float& z);
 
 			/// --- MEMBER FUNCTIONS ---
+			void Normalize();
+			vec3 Normalized();
+			float Magnitude();
+			float SqrMagnitude();
+
+			/// --- STATIC FUNCTIONS ---
+			static vec3 Normalize(const vec3& v);
+			static float Magnitude(const vec3& v);
+			static float SqrMagnitude(const vec3& v);
+			static float Dot(const vec3& lhs, const vec3& rhs);
+			static vec3 Cross(const vec3& lhs, const vec3& rhs);
 
 			/// --- OPERATORS ---
 			vec3& operator=(const vec3& v);
