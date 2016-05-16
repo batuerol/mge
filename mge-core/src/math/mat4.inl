@@ -5,6 +5,10 @@ namespace mge
 	{
 		mat4::mat4()
 		{
+			for (int i = 0; i < 16; ++i)
+			{
+				elements[i] = 0;
+			}
 		}
 
 		inline mat4::mat4(float diagonal)
