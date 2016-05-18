@@ -32,7 +32,8 @@ namespace mge
 			void Bind();
 			void Unbind();
 
-		private:			
+		private:
+			// TODO(batuhan): Should Load() be static?
 			GLuint Load();
 			static GLuint CreateShader(const std::string& shaderSource, GLenum shaderType);			
 		};

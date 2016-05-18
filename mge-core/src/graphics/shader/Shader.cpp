@@ -17,6 +17,16 @@ mge::shader::Shader::~Shader()
 	glDeleteProgram(m_ShaderProgram);
 }
 
+void mge::shader::Shader::Bind()
+{
+	glUseProgram(m_ShaderProgram);
+}
+
+void mge::shader::Shader::Unbind()
+{
+	glUseProgram(0);
+}
+
 GLuint mge::shader::Shader::Load()
 {
 	m_ShaderProgram = glCreateProgram();	
