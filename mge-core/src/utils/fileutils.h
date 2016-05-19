@@ -19,7 +19,7 @@ namespace mge
 
 			std::string line;
 			std::string result;
-			while(is.eof())
+			while(!is.eof())
 			{
 				std::getline(is, line);
 				result.append(line + '\n');
