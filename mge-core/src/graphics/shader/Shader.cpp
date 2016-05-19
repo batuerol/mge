@@ -48,7 +48,7 @@ namespace mge
 			return m_ShaderProgram;
 		}
 
-		GLuint mge::shader::Shader::CreateShader(const std::string & shaderSource, GLenum shaderType)
+		GLuint Shader::CreateShader(const std::string & shaderSource, GLenum shaderType)
 		{
 			GLuint shader = glCreateShader(shaderType);
 			if (shader == 0)
