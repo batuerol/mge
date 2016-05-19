@@ -2,7 +2,7 @@
 
 namespace mge
 {
-	namespace shader
+	namespace graphics
 	{
 		// TODO(batuhan): Obviously this needs to change.
 		Shader::Shader(const char * vertexFile, const char * fragmentFile)

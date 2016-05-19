@@ -6,7 +6,7 @@
 
 namespace mge
 {
-	namespace shader
+	namespace graphics
 	{
 		// TODO(batuhan): Make this base class for directX/GL shaders
 		// TODO(batuhan): Single file shaders?		
