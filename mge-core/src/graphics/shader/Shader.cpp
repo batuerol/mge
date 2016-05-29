@@ -35,6 +35,68 @@ namespace mge
 			glUseProgram(0);
 		}
 
+		void Shader::SetUniform1i(const std::string & name, int value)
+		{
+			GLint location = GetUniformLocation(name);
+			glUniform1i(location, value);
+		}
+
+		void Shader::SetUniform1f(const std::string & name, float value)
+		{
+			GLint location = GetUniformLocation(name);
+			glUniform1f(location, value);
+		}
+
+		void Shader::SetUniform2f(const std::string & name, float x, float y)
+		{
+			GLint location = GetUniformLocation(name);
+			glUniform2f(location, x, y);
+		}
+
+		void Shader::SetUniform3f(const std::string & name, float x, float y, float z)
+		{
+			GLint location = GetUniformLocation(name);
+			glUniform3f(location, x, y, z);
+		}
+
+		void Shader::SetUniform3f(const std::string & name, const math::vec3 & value)
+		{
+			GLint location = GetUniformLocation(name);
+			glUniform3f(location, value.x, value.y, value.z);
+		}
+
+		void Shader::SetUniform4f(const std::string & name, const math::vec4 & value)
+		{
+			GLint location = GetUniformLocation(name);
+			glUniform4f(location, value.x, value.y, value.z, value.w);
+		}
+
+		void Shader::SetUniformMat4f(const std::string & name, const math::mat4 & value)
+		{
+			GLint location = GetUniformLocation(name);
+			glUniformMatrix4fv(location, 1, GL_FALSE, value.elements);
+		}
+
+		GLint Shader::GetUniformLocation(const std::string & name)
+		{
+			if (m_LocationCache.find(name) != m_LocationCache.end())
+			{
+				return m_LocationCache[name];
+			}
+
+			GLint result = glGetUniformLocation(m_ShaderProgram, name.c_str());
+			if (result != -1)
+			{
+				m_LocationCache[name] = result;
+			}
+			else
+			{
+				// TODO(batuhan): Uniform could not found.
+			}
+
+			return result;
+		}
+
 		GLuint Shader::Load()
 		{
 			m_ShaderProgram = glCreateProgram();
