@@ -1,4 +1,3 @@
-#include "vec4.h"
 namespace mge
 {
 	namespace math
