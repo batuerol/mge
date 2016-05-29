@@ -11,6 +11,7 @@ namespace mge
 		static std::string ReadFile(const std::string& fileName)
 		{
 			std::ifstream is(fileName, std::ios_base::in);
+			
 			if (!is.is_open())
 			{
 				// TODO(batuhan): File not found. Log

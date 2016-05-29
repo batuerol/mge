@@ -29,13 +29,15 @@ namespace mge
 			Shader(const char* vertexFile, const char* fragmentFile);
 			virtual ~Shader();
 
-			void Bind();
-			void Unbind();
+			void Enable();
+			void Disable();
 
 		private:
 			// TODO(batuhan): Should Load() be static?
 			GLuint Load();
-			static GLuint CreateShader(const std::string& shaderSource, GLenum shaderType);			
+			static GLuint CreateShader(const std::string& shaderSource, GLenum shaderType);
+			// TODO(batuhan): This is temporary.
+			static bool CheckShaderError(GLuint shader, GLuint flag, bool isProgram, const std::string& errorMessage);
 		};
 	}
 }
