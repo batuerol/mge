@@ -1,13 +1,12 @@
-#include "mat4.h"
 namespace mge
 {
 	namespace math
 	{
-		mat4::mat4()
+		inline mat4::mat4()
 		{
 			for (int i = 0; i < 16; ++i)
 			{
-				elements[i] = 0;
+				elements[i] = 0.0f;
 			}
 		}
 
@@ -40,6 +39,11 @@ namespace mge
 			this->columns[3] = col3;
 		}
 
+		inline mat4::mat4(const mat4 & rhs) :
+			columns{ rhs.columns[0], rhs.columns[1], rhs.columns[2], rhs.columns[3] }
+		{
+		}
+
 		inline void mat4::SetRow(int i, vec4 row)
 		{
 			// TODO(batuhan): Boundary check.
@@ -49,14 +53,14 @@ namespace mge
 			this->elements[3 * 4 + i] = row.w;
 		}
 
-		vec4 & mat4::operator[](unsigned int i)
+		inline vec4 & mat4::operator[](unsigned int i)
 		{
 			// TODO(batuhan): Assert. Boundary check.
 			//return const_cast<vec4&>(static_cast<const mat4&>(*this)[i]);
 			return (vec4&)columns[i];
 		}
 
-		vec4 & const mat4::operator[](unsigned int i) const
+		inline vec4 & const mat4::operator[](unsigned int i) const
 		{
 			// TODO(batuhan): Assert. Boundary check.
 			return (vec4&)columns[i];
@@ -175,7 +179,7 @@ namespace mge
 			return result;
 		}
 
-		mat4 mat4::Identity()
+		inline mat4 mat4::Identity()
 		{
 			return mat4(1.0f);
 		}
@@ -515,8 +519,8 @@ namespace mge
 		}
 
 		static mat4 operator/(const mat4& lhs, const mat4& rhs)
-		{			
-			return mat4::Inverse(lhs) * rhs;			
+		{
+			return mat4::Inverse(lhs) * rhs;
 		}
 
 		static bool operator==(const mat4& lhs, const mat4& rhs)

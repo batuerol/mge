@@ -18,7 +18,7 @@ namespace mge
 			mat4(float diagonal);
 			mat4(float *elements);			
 			mat4(const vec4& col0, const vec4& col1, const vec4& col2, const vec4& col3);
-			mat4(const mat4& rhs) = default;
+			mat4(const mat4& rhs);
 
 			/// --- MEMBER FUNCTIONS ---			
 			void SetRow(int i, vec4 row);
