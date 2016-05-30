@@ -39,6 +39,7 @@ namespace mge
 			glfwSetWindowSizeCallback(m_pWindow, callback_windowResize);
 			glfwSetKeyCallback(m_pWindow, callback_key);
 			glfwSetMouseButtonCallback(m_pWindow, callback_mousebutton);
+			glfwSetCursorPosCallback(m_pWindow, callback_cursorposition);
 
 			if (glewInit() != GLEW_OK)
 			{
